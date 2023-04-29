@@ -1,0 +1,81 @@
+.section-catalog {
+  margin: {
+    top: $size-main*4;
+    bottom: $size-main*4;
+  }
+}
+.container{
+  max-width: $width*0.9;
+}
+
+.section-catalog h1 {
+  margin: {
+    top: $size-main*4;
+    bottom: $size-main*4;
+  }
+  color: $color-gray;
+  font-size: 3em;
+  font-family: $font-main;
+}
+
+.catalog {
+  &-main {
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2em;
+    font-family: $font-second;
+  }
+
+  &-item {
+    background-color: lighten($color-gray, 25%);
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    transition: background-color 0.5s ease;
+    overflow: hidden;
+    color: $color-gray;
+    cursor: pointer;
+    border-radius: 5%;
+
+
+    &:hover {
+      background-color: lighten($color-gray, 15%);
+      //transform: scale(1.1) translateY(-12px);
+    }
+
+    &-img {
+      height: $size-width*2.5+px;
+      background-size: cover;
+      background-position: $position;
+      transition: transform 0.5s ease;
+    }
+
+    h4 {
+      text-align: left;
+      align-content: $position;
+      margin: $size-main;
+      color: lighten($color-dark, 100%);
+      font-family: $font-main;
+      font-size: $size-main*2.5;
+
+    }
+    h3{
+      text-align: right;
+      align-content: $position;
+      margin: $size-main;
+      color: lighten($color-dark, 100%);
+      font-family: $font-main;
+      font-size: $size-main*3;
+
+
+    }
+    p {
+      text-align: left;
+      align-content: $position;
+      margin: $size-main;
+    }
+    .btn{
+      align-self: $position;
+      width: $size-main*5;
+    }
+  }
+}

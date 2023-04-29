@@ -1,0 +1,93 @@
+.cart h1 {
+  margin: {
+    top: $size-main*4;
+    bottom: $size-main*4;
+  }
+  color: $color-gray;
+  font-size: 3em;
+  font-family: $font-main;
+}
+
+
+.cart {
+  display: block;
+  width: 80%;
+  padding: $size-main;
+  grid-gap: $size-main;
+
+}
+
+.item {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2%;
+  justify-items: $position;
+  align-items: $position;
+  border-bottom: 2px solid $color-blue;
+  background-size: cover;
+  padding: $size-main*2;
+  font-size: $size-main*2;
+  color: darken($color-dark, 100%);
+  position: relative;
+  //cursor: pointer;
+  font-family: $font-main;
+  transition: all 0.75s ease;
+  &:nth-last-child(1) {
+    grid-column: 1/8;
+  }
+
+  span {
+    text-align: $position;
+  }
+
+  &:hover {
+    //color: darken($color-blue, 0.2);
+    &::before {
+      opacity: 0.7;
+    }
+  }
+
+  &::before {
+    content: "";
+    top: $size-zero;
+    bottom: $size-zero;
+    left: $size-zero;
+    right: $size-zero;
+    position: absolute;
+    background-color: $color-gray;
+    opacity: 0.3;
+    transition: all 1.25s ease;
+  }
+
+
+}
+
+.btn-primary {
+  display: inline-block;
+  border: none;
+  color: lighten($color-dark, 100%);
+  text-decoration: none;
+  padding: $size-main*1.5 $size-main*2;
+  font-size: $size-main*2;
+  border-radius: $size-main/2;
+  text-align: $position;
+  width: $size-main;
+  cursor: pointer;
+  font-family: $font-main;
+  opacity: 0.95;
+  transition: all 0.6s ease;
+  background-color: $color-blue;
+  box-shadow: 3px 3px 7px darken($color-blue, 3%);
+
+  &:hover {
+    background-color: darken($color-blue, 5%);
+    box-shadow: 3px 3px 7px darken($color-blue, 20%);
+  }
+}
+
+img {
+  height: $size-width*1.2+px;
+  background-size: cover;
+  background-position: $position;
+  transition: transform 0.5s ease;
+}
